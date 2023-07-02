@@ -49,14 +49,3 @@ jobs:
           tags: |
             latest
             $(Build.BuildId)
-
-  - job: publishjob
-    displayName: 'Publish Artifacts'
-    pool:
-      vmImage: ubuntu-22.04
-    steps:
-      - task: PublishBuildArtifacts@1
-        displayName: 'Publish Artifacts'
-        inputs:
-          PathtoPublish: '$(Build.SourcesDirectory)/target'
-          ArtifactName: 'gameoflife'
